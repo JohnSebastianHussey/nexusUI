@@ -46,7 +46,7 @@ window.onload = function() {
   nx.startPulse();
   
 };
-},{"./lib/core/manager":2,"./lib/utils/dom":4,"./lib/utils/drawing":5,"./lib/utils/math":6,"extend":49,"webfontloader":54}],2:[function(require,module,exports){
+},{"./lib/core/manager":2,"./lib/utils/dom":4,"./lib/utils/drawing":5,"./lib/utils/math":6,"extend":50,"webfontloader":55}],2:[function(require,module,exports){
 
 /** 
   @title NexusUI API
@@ -532,7 +532,7 @@ manager.prototype.labelSize = function(size) {
 
 
 
-},{"../utils/drawing":5,"../utils/timing":7,"../utils/transmit":8,"../widgets":19,"events":48,"util":53}],3:[function(require,module,exports){
+},{"../utils/drawing":5,"../utils/timing":7,"../utils/transmit":8,"../widgets":19,"events":49,"util":54}],3:[function(require,module,exports){
 var EventEmitter = require('events').EventEmitter;
 var util = require('util');
 var domUtils = require('../utils/dom');
@@ -1128,7 +1128,7 @@ widget.prototype.makeRoomForLabel = function() {
   this.labelY = this.height - this.labelSize/2;
   // must add the above code to widget.resize
 }
-},{"../utils/dom":4,"../utils/drawing":5,"../utils/timing":7,"../utils/transmit":8,"events":48,"util":53}],4:[function(require,module,exports){
+},{"../utils/dom":4,"../utils/drawing":5,"../utils/timing":7,"../utils/transmit":8,"events":49,"util":54}],4:[function(require,module,exports){
 
 /** @class utils 
   Shared utility functions. These functions are exposed as methods of nx in NexusUI projects, i.e. .mtof() here can be accessed in your project with nx.mtof().
@@ -1694,7 +1694,7 @@ banner.prototype.click = function() {
 		window.location = this.link;
 	}
 }
-},{"../core/widget":3,"util":53}],10:[function(require,module,exports){
+},{"../core/widget":3,"util":54}],10:[function(require,module,exports){
 var util = require('util');
 var widget = require('../core/widget');
 var drawing = require('../utils/drawing');
@@ -1913,7 +1913,7 @@ button.prototype.setTouchImage = function(image) {
 	this.imageTouch.onload = this.draw.bind(this)
 	this.imageTouch.src = image;
 }
-},{"../core/widget":3,"../utils/drawing":5,"util":53}],11:[function(require,module,exports){
+},{"../core/widget":3,"../utils/drawing":5,"util":54}],11:[function(require,module,exports){
 var math = require('../utils/math')
 var util = require('util');
 var widget = require('../core/widget');
@@ -2283,7 +2283,7 @@ circlestep.prototype.jumpToNextStep = function(place) {
 		this.draw();
 }
 
-},{"../core/widget":3,"../utils/drawing":5,"../utils/math":6,"util":53}],12:[function(require,module,exports){
+},{"../core/widget":3,"../utils/drawing":5,"../utils/math":6,"util":54}],12:[function(require,module,exports){
 var util = require('util');
 var widget = require('../core/widget');
 
@@ -2383,7 +2383,7 @@ colors.prototype.click = function(e) {
 colors.prototype.move = function(e) {
 	this.click(e);
 }
-},{"../core/widget":3,"util":53}],13:[function(require,module,exports){
+},{"../core/widget":3,"util":54}],13:[function(require,module,exports){
 var util = require('util');
 var widget = require('../core/widget');
 
@@ -2451,7 +2451,7 @@ comment.prototype.draw = function() {
 	}
 	this.wrapText(this.val.text, 6, 3+this.size, this.GUI.w-6, this.size);
 }
-},{"../core/widget":3,"util":53}],14:[function(require,module,exports){
+},{"../core/widget":3,"util":54}],14:[function(require,module,exports){
 var math = require('../utils/math')
 var util = require('util');
 var widget = require('../core/widget');
@@ -2539,7 +2539,7 @@ crossfade.prototype.move = function() {
 	this.draw();
 	this.transmit(this.val);
 }
-},{"../core/widget":3,"../utils/math":6,"util":53}],15:[function(require,module,exports){
+},{"../core/widget":3,"../utils/math":6,"util":54}],15:[function(require,module,exports){
 var math = require('../utils/math');
 var util = require('util');
 var widget = require('../core/widget');
@@ -2747,7 +2747,7 @@ dial.prototype.aniBounce = function() {
 }
 
 
-},{"../core/widget":3,"../utils/math":6,"util":53}],16:[function(require,module,exports){
+},{"../core/widget":3,"../utils/math":6,"util":54}],16:[function(require,module,exports){
 var startTime = 0;
 
 var math = require('../utils/math')
@@ -3053,7 +3053,7 @@ envelope.prototype.findNearestNode = function(x, y, nodes) {
 
 	return nearestIndex;
 }
-},{"../core/widget":3,"../utils/math":6,"util":53}],17:[function(require,module,exports){
+},{"../core/widget":3,"../utils/math":6,"util":54}],17:[function(require,module,exports){
 var math = require('../utils/math')
 var util = require('util');
 var widget = require('../core/widget');
@@ -3395,7 +3395,7 @@ ghost.prototype.click = function(e) {
 		this.draw();
 	}
 }
-},{"../core/widget":3,"../utils/math":6,"util":53}],18:[function(require,module,exports){
+},{"../core/widget":3,"../utils/math":6,"util":54}],18:[function(require,module,exports){
 var math = require('../utils/math')
 var util = require('util');
 var widget = require('../core/widget');
@@ -3753,7 +3753,7 @@ ghostlist.prototype.click = function(e) {
 		this.draw();
 	}
 }
-},{"../core/widget":3,"../utils/math":6,"util":53}],19:[function(require,module,exports){
+},{"../core/widget":3,"../utils/math":6,"util":54}],19:[function(require,module,exports){
 module.exports = {
   banner: require('./banner'),
   button: require('./button'),
@@ -3774,6 +3774,7 @@ module.exports = {
   metroball: require('./metroball'),
   motion: require('./motion'),
   mouse: require('./mouse'),
+  multicirclestep: require('./multicirclestep'),
   multislider: require('./multislider'),
   multitouch: require('./multitouch'),
   number: require('./number'),
@@ -3794,7 +3795,7 @@ module.exports = {
   wavegrain: require('./wavegrain'),
   windows: require('./windows')
 }
-},{"./banner":9,"./button":10,"./circlestep":11,"./colors":12,"./comment":13,"./crossfade":14,"./dial":15,"./envelope":16,"./ghost":17,"./ghostlist":18,"./joints":20,"./keyboard":21,"./matrix":22,"./message":23,"./meter":24,"./metro":25,"./metroball":26,"./motion":27,"./mouse":28,"./multislider":29,"./multitouch":30,"./number":31,"./panel":32,"./position":33,"./range":34,"./select":35,"./slider":36,"./string":37,"./tabs":38,"./text":39,"./tilt":40,"./toggle":41,"./trace":42,"./typewriter":43,"./vinyl":44,"./waveform":45,"./wavegrain":46,"./windows":47}],20:[function(require,module,exports){
+},{"./banner":9,"./button":10,"./circlestep":11,"./colors":12,"./comment":13,"./crossfade":14,"./dial":15,"./envelope":16,"./ghost":17,"./ghostlist":18,"./joints":20,"./keyboard":21,"./matrix":22,"./message":23,"./meter":24,"./metro":25,"./metroball":26,"./motion":27,"./mouse":28,"./multicirclestep":29,"./multislider":30,"./multitouch":31,"./number":32,"./panel":33,"./position":34,"./range":35,"./select":36,"./slider":37,"./string":38,"./tabs":39,"./text":40,"./tilt":41,"./toggle":42,"./trace":43,"./typewriter":44,"./vinyl":45,"./waveform":46,"./wavegrain":47,"./windows":48}],20:[function(require,module,exports){
 var math = require('../utils/math')
 var util = require('util');
 var widget = require('../core/widget');
@@ -3991,7 +3992,7 @@ joints.prototype.aniBounce = function() {
 	}
 }
 
-},{"../core/widget":3,"../utils/math":6,"util":53}],21:[function(require,module,exports){
+},{"../core/widget":3,"../utils/math":6,"util":54}],21:[function(require,module,exports){
 var util = require('util');
 var widget = require('../core/widget');
 var drawing = require('../utils/drawing');
@@ -4326,7 +4327,7 @@ keyboard.prototype.release = function(e) {
 
 
 
-},{"../core/widget":3,"../utils/drawing":5,"../utils/math":6,"util":53}],22:[function(require,module,exports){
+},{"../core/widget":3,"../utils/drawing":5,"../utils/math":6,"util":54}],22:[function(require,module,exports){
 var math = require('../utils/math');
 var drawing = require('../utils/drawing');
 var util = require('util');
@@ -4776,7 +4777,7 @@ matrix.prototype.life = function() {
   return false;
 }
 
-},{"../core/widget":3,"../utils/drawing":5,"../utils/math":6,"util":53}],23:[function(require,module,exports){
+},{"../core/widget":3,"../utils/drawing":5,"../utils/math":6,"util":54}],23:[function(require,module,exports){
 var util = require('util');
 var widget = require('../core/widget');
 
@@ -4848,7 +4849,7 @@ message.prototype.click = function(e) {
 message.prototype.release = function(e) {
 	this.draw();
 }
-},{"../core/widget":3,"util":53}],24:[function(require,module,exports){
+},{"../core/widget":3,"util":54}],24:[function(require,module,exports){
 var util = require('util');
 var drawing = require('../utils/drawing');
 var widget = require('../core/widget');
@@ -4971,7 +4972,7 @@ meter.prototype.draw = function(){
 }
     
     
-},{"../core/widget":3,"../utils/drawing":5,"util":53}],25:[function(require,module,exports){
+},{"../core/widget":3,"../utils/drawing":5,"util":54}],25:[function(require,module,exports){
 var math = require('../utils/math')
 var util = require('util');
 var widget = require('../core/widget');
@@ -5085,7 +5086,7 @@ metro.prototype.advance = function() {
 metro.prototype.customDestroy = function() {
 	nx.removeAni(this.advance.bind(this))
 }
-},{"../core/widget":3,"../utils/math":6,"util":53}],26:[function(require,module,exports){
+},{"../core/widget":3,"../utils/math":6,"util":54}],26:[function(require,module,exports){
 var math = require('../utils/math');
 var drawing = require('../utils/drawing');
 var util = require('util');
@@ -5349,7 +5350,7 @@ metroball.prototype.Ball = function(thisIndex, thisX, thisY, parent) {
 		}	
 	}	
 }
-},{"../core/widget":3,"../utils/drawing":5,"../utils/math":6,"util":53}],27:[function(require,module,exports){
+},{"../core/widget":3,"../utils/drawing":5,"../utils/math":6,"util":54}],27:[function(require,module,exports){
 var math = require('../utils/math')
 var util = require('util');
 var widget = require('../core/widget');
@@ -5514,7 +5515,7 @@ motion.prototype.customDestroy = function() {
 	this.active = false;
 	window.removeEventListener("devicemotion",this.motionlistener,false);
 }
-},{"../core/widget":3,"../utils/math":6,"util":53}],28:[function(require,module,exports){
+},{"../core/widget":3,"../utils/math":6,"util":54}],28:[function(require,module,exports){
 var util = require('util');
 var widget = require('../core/widget');
 var math = require('../utils/math');
@@ -5614,7 +5615,363 @@ mouse.prototype.move = function(e) {
 mouse.prototype.customDestroy = function() {
 	window.removeEventListener("mousemove",  this.boundmove, false);
 }
-},{"../core/widget":3,"../utils/math":6,"util":53}],29:[function(require,module,exports){
+},{"../core/widget":3,"../utils/math":6,"util":54}],29:[function(require,module,exports){
+var math = require('../utils/math')
+var util = require('util');
+var circlestep = require('./circlestep');
+var drawing = require('../utils/drawing');
+
+/** 
+	@class multicirclestep      
+	Two-dimensional circular step sequencer with step magnitudes for each step.
+	```html
+	<canvas nx="multicirclestep"></canvas>
+	```
+	<canvas nx="multicirclestep" style="margin-left:25px"></canvas>
+*/
+
+var multicirclestep = module.exports = function (target) {
+
+	this.wheelCount = 5;
+
+	circlestep.call(this, target);
+
+	if (this.canvas.getAttribute("wheels")!=null) {
+		this.wheelCount = parseFloat(this.canvas.getAttribute("wheelCount"));
+	}
+	
+
+	/** @property {object}  val   val is an object containing the main interactive / actionable aspects of the widget.
+		| &nbsp; | data
+		| --- | ---
+		| *step* | step poisition in the sequencer
+		| *list* | steps with magnitude of step
+	*/
+	this.val = {
+		step: null,
+		list: this.list
+	}
+
+	this.place = null;
+
+
+	/** @property {integer}  bpm   Beats per minute (if sequencing)
+	```js
+		multicirclestep.bpm = 120;
+	```
+	*/
+	this.bpm = 120;
+	this.pbpm = this.bpm;
+	this.starttime;
+	this.lastbeat;
+	this.thisframe = 0;
+	this.lastframe = 0;
+	this.context.lineWidth = 1;
+
+	this.sequencing = false;
+	this.starttime = nx.starttime;
+	
+	this.init();
+}
+
+// inherit the widget object template
+util.inherits(multicirclestep, circlestep);
+
+// .init() is called automatically when the widget is created on a webpage.
+multicirclestep.prototype.init = function() {
+
+	this.defaultSize = { width: this.GUI.w, height: this.GUI.w };
+
+	this.outerRadius = this.defaultSize.width * 0.5;
+	this.innerRadius = this.defaultSize.width * 0.16;
+	this.list = new Array();
+
+	this.wheels = [];
+	for(var i = 0; i<this.wheelCount; i++) {
+		
+		var wheelSettings = {
+			steps: this.steps,
+			stepDuration: this.stepDuration,
+			midiInstrument: 0,
+			list: new Array(),
+			thisframe: null,
+			lastframe: null,
+			place: null,
+			note: 0.0
+		}
+
+		for(var j = 0; j<this.steps; j++) {
+			wheelSettings.list.push(0);
+		}	
+		this.wheels.push(wheelSettings)
+	}
+	
+	this.activeWheel = 1;
+	this.steps = this.wheels[this.activeWheel].steps;
+	
+
+	this.actualWid = this.GUI.w;
+	this.actualHgt = this.GUI.w;
+
+	this.pallette = [
+		{
+			accent: "#00AAFF",
+			accenthl: "#4DC4FF"
+		},
+		{
+			accent: "#FF9600",
+			accenthl: "#FAC271"
+		},
+		{
+			accent: "#FF00BF",
+			accenthl: "#FF73DC"
+		},
+		{
+			accent: "#00FF63",
+			accenthl: "#79FFAD"
+		},
+		{
+			accent: "#8200FF",
+			accenthl: "#C180FF"
+		}
+		]
+
+	this.wheelGap = 3;
+	this.inactiveWheelWidth = 6;
+	this.activeWheelWidth = this.defaultSize.width * 0.25;
+
+	this.sequencerCenterX = this.actualWid/2;
+	this.sequencerCenterY = this.actualHgt/2;
+	this.draw();
+}
+
+multicirclestep.prototype.draw = function() {
+	this.erase();
+	with (this.context) {
+
+		// use this.colors.fill for the widget background color (default: very light gray)
+		// use this.colors.border for any extra structural needs (default: light gray)
+		// use this.colors.accent for important or highlighted parts (default: a bright color)
+
+
+		var drawingX = 0.5 * this.actualWid;
+		var drawingY = math.invert(0.5) * this.actualHgt;
+
+		with (this.context) {
+
+			
+			var arcStart = -Math.PI/2;
+
+			var outerRadius = this.defaultSize.width * 0.5;
+			var wheelGap = this.wheelGap;
+			var inactiveWheelWidth = this.inactiveWheelWidth;
+			var activeWheelWidth = this.activeWheelWidth;
+
+			for (var i = 0; i<this.wheels.length; i++) {
+
+				var innerRadius = (i==this.activeWheel) ? outerRadius - activeWheelWidth : outerRadius - inactiveWheelWidth;
+				var wheel = this.wheels[i];
+				var gap = (Math.PI*2/(this.defaultSize.width / 2));
+				var arcSize = (Math.PI*2/wheel.steps);
+				var colors = this.pallette[i % this.pallette.length];
+
+				for (var j = 0; j<wheel.list.length; j++) {
+					// draw step
+					beginPath();
+					fillStyle = this.colors.border;
+					if (this.activeWheel==i && wheel.place==j) {
+						fillStyle = this.colors.fill;
+					}
+					arc(this.sequencerCenterX, this.sequencerCenterY, innerRadius, arcStart, arcStart + arcSize - gap, false);
+					arc(this.sequencerCenterX, this.sequencerCenterY, outerRadius, arcStart + arcSize - gap, arcStart, true);	
+					closePath();				
+					fill();
+
+					// draw impulse for active wheels, fill wheel with color of inactive
+					if (wheel.list[j]!=0 || this.activeWheel!=i) {
+						var stepMagnitude = wheel.list[j];
+						var impulseOuterRadius = (this.activeWheel==i)  ? ((outerRadius - innerRadius) * stepMagnitude) + innerRadius : outerRadius;
+						beginPath();
+						fillStyle = colors.accent;
+						if ((this.activeWheel==i && wheel.place==j) || this.activeWheel!=i) {
+							fillStyle = colors.accenthl;
+						}
+						arc(this.sequencerCenterX, this.sequencerCenterY, innerRadius, arcStart, arcStart + arcSize - gap, false);
+						arc(this.sequencerCenterX, this.sequencerCenterY, impulseOuterRadius, arcStart + arcSize - gap, arcStart, true);	
+						closePath();				
+						fill();
+					}
+					arcStart = arcStart + arcSize;
+				}
+				outerRadius = (i==this.activeWheel) ? outerRadius - activeWheelWidth - wheelGap : outerRadius - inactiveWheelWidth - wheelGap;
+			}
+		}
+	}
+	
+	this.drawLabel();
+}
+
+multicirclestep.prototype.handleClick = function(x, y) {
+	var isHitSequencer = this.hitSequencer(x, y);
+	if (isHitSequencer) {
+		var steps = this.wheels[this.activeWheel].steps;
+		var index = this.getSegmentIndex(x, y, steps);
+		var outerRadius = this.outerRadius - ((this.wheelGap + this.inactiveWheelWidth) * this.activeWheel);
+		var innerRadius = outerRadius - this.activeWheelWidth;
+
+
+		var magnitude = this.hitMagnitude(x, y, outerRadius, innerRadius);
+		this.wheels[this.activeWheel].list[index] = magnitude;
+	}
+}
+
+
+multicirclestep.prototype.toggleStep = function(x, y) {
+	var isHitSequencer = this.hitSequencer(x, y);
+	if (isHitSequencer) {
+		var steps = this.wheels[this.activeWheel].steps;
+		var index = this.getSegmentIndex(x, y, steps);
+		var stepMagnitude = this.wheels[this.activeWheel].list[index];
+		var centerX = this.sequencerCenterX;
+		var centerY = this.sequencerCenterY;
+
+		var outerRadius = this.outerRadius - ((this.wheelGap + this.inactiveWheelWidth) * this.activeWheel);
+		var innerRadius = outerRadius - this.activeWheelWidth;
+		
+		var stepRadius = (outerRadius - innerRadius) * stepMagnitude + innerRadius;
+		var withinStepRadius = Math.pow((x - centerX), 2) + Math.pow((y - centerY), 2) < Math.pow(stepRadius,2);
+		if (withinStepRadius) {
+			this.wheels[this.activeWheel].list[index] = 0;
+		}
+		else {
+			var magnitude = this.hitMagnitude(x, y, outerRadius, innerRadius);
+			this.wheels[this.activeWheel].list[index] = magnitude;		
+		}		
+	}
+}
+
+multicirclestep.prototype.hitSequencer = function(x, y) {
+	var centerX = this.sequencerCenterX;
+	var centerY = this.sequencerCenterY;
+	var outerRadius = this.outerRadius - ((this.wheelGap + this.inactiveWheelWidth) * this.activeWheel);
+	var innerRadius = outerRadius - this.activeWheelWidth;
+
+	var withinOuterRadius = Math.pow((x - centerX), 2) + Math.pow((y - centerY), 2) < Math.pow(outerRadius,2);
+	var withinInnerRadius = Math.pow((x - centerX), 2) + Math.pow((y - centerY), 2) < Math.pow(innerRadius,2);
+	return withinOuterRadius && !withinInnerRadius;
+}
+
+multicirclestep.prototype.selectWheel = function(wheel) {
+	this.activeWheel = wheel;
+	this.steps = this.wheels[this.activeWheel].steps;
+	this.draw();
+}
+
+multicirclestep.prototype.setWheelStepDuration = function(stepDuration) {
+	var wheel = this.wheels[this.activeWheel];
+	wheel.stepDuration = stepDuration;
+	this.wheels[this.activeWheel] = wheel;
+	this.draw();
+}
+
+multicirclestep.prototype.setWheelStepCount = function(stepCount) {
+	var wheel = this.wheels[this.activeWheel];
+	wheel.steps = stepCount;
+	this.wheels[this.activeWheel] = wheel;
+	wheel.list = new Array();
+	for(var i = 0; i<wheel.steps; i++) {
+		wheel.list.push(0);
+	}
+	this.wheels[this.activeWheel] = wheel;
+	this.draw();
+}
+
+multicirclestep.prototype.sequence = function(bpm) {
+
+	if (bpm) {
+		this.bpm = bpm;
+	}	
+	this.isSequencing = true;
+	requestAnimationFrame(this.seqStep.bind(this));
+}
+
+multicirclestep.prototype.seqStep = function() {
+
+	if (this.bpm == 0) { this.bpm = 1 }
+
+	//current time
+	var now = new Date().getTime();
+
+	//delta time since start
+	var dt = now - this.starttime;
+
+	// TODO need to step through for each wheel - each wheel has its own deltas thisframe, lastframe, stepduration
+	for (var i=0; i<this.wheels.length; i++) {
+		var wheel = this.wheels[i];
+		if (this.bpm != this.pbpm) {
+
+			//frame + decimal since last beat, in old bpm
+			var timeP = (dt/(60000/this.pbpm))
+
+			// scale to new bpm
+			dt = timeP * (60000/this.bpm)
+
+			//adjust the starttime reference point
+			wheel.starttime = now - dt
+
+			//calculate new frame #
+			wheel.thisframe = ~~(dt/(60000/(this.bpm/wheel.stepDuration)));
+
+		} else {
+
+		    //this.thisframe is a constantly ascending integer counter
+		    //to compare with this.lastframe to determine when to increment this.place
+		    //this.thisframe IS NOT the current column.
+		    //the current column is this.place, which is set conditionally below.
+			wheel.thisframe = ~~(dt/(60000/(this.bpm/wheel.stepDuration)));
+
+		}
+
+		this.pbpm = this.bpm;
+
+	    if (wheel.thisframe != wheel.lastframe) {
+
+			this.lastbeat = now;
+
+			wheel.place++;
+			if (wheel.place>=wheel.list.length) {
+				wheel.place = 0;
+			}
+
+			if (wheel.place==null) {
+				wheel.place = 0;
+			}
+
+			this.jumpToNextStep(i, wheel.place);
+
+	    }
+
+		wheel.lastframe = wheel.thisframe;
+
+	}
+
+    if (this.isSequencing) {
+		requestAnimationFrame(this.seqStep.bind(this));
+	}  
+}
+
+
+multicirclestep.prototype.jumpToNextStep = function(wheelIndex, place) {
+		this.val = {
+			step: place,
+			wheel: wheelIndex,
+			list: this.wheels[wheelIndex]
+		}
+		this.transmit(this.val);
+		this.draw();
+}
+
+},{"../utils/drawing":5,"../utils/math":6,"./circlestep":11,"util":54}],30:[function(require,module,exports){
 var math = require('../utils/math')
 var util = require('util');
 var widget = require('../core/widget');
@@ -5769,7 +6126,7 @@ multislider.prototype.setSliderValue = function(slider,value) {
 	this.transmit(msg);
 }
 
-},{"../core/widget":3,"../utils/math":6,"util":53}],30:[function(require,module,exports){
+},{"../core/widget":3,"../utils/math":6,"util":54}],31:[function(require,module,exports){
 var math = require('../utils/math');
 var drawing = require('../utils/drawing');
 var util = require('util');
@@ -5974,7 +6331,7 @@ multitouch.prototype.sendit = function() {
 	}
 	this.transmit(this.val);
 }
-},{"../core/widget":3,"../utils/drawing":5,"../utils/math":6,"util":53}],31:[function(require,module,exports){
+},{"../core/widget":3,"../utils/drawing":5,"../utils/math":6,"util":54}],32:[function(require,module,exports){
 var math = require('../utils/math')
 var util = require('util');
 var widget = require('../core/widget');
@@ -6199,7 +6556,7 @@ number.prototype.release = function(e) {
 	}
 }
 
-},{"../core/widget":3,"../utils/math":6,"util":53}],32:[function(require,module,exports){
+},{"../core/widget":3,"../utils/math":6,"util":54}],33:[function(require,module,exports){
 var util = require('util');
 var widget = require('../core/widget');
 
@@ -6224,7 +6581,7 @@ panel.prototype.draw = function() {
 		fill();
 	}
 }
-},{"../core/widget":3,"util":53}],33:[function(require,module,exports){
+},{"../core/widget":3,"util":54}],34:[function(require,module,exports){
 var math = require('../utils/math')
 var util = require('util');
 var widget = require('../core/widget');
@@ -6434,7 +6791,7 @@ position.prototype.aniBounce = function() {
 position.prototype.customDestroy = function() {
 	nx.removeAni(this.aniBounce);
 }
-},{"../core/widget":3,"../utils/math":6,"util":53}],34:[function(require,module,exports){
+},{"../core/widget":3,"../utils/math":6,"util":54}],35:[function(require,module,exports){
 var util = require('util');
 var widget = require('../core/widget');
 var math = require('../utils/math')
@@ -6633,7 +6990,7 @@ range.prototype.move = function() {
 
 	}
 }
-},{"../core/widget":3,"../utils/math":6,"util":53}],35:[function(require,module,exports){
+},{"../core/widget":3,"../utils/math":6,"util":54}],36:[function(require,module,exports){
 var util = require('util');
 var widget = require('../core/widget');
 
@@ -6746,7 +7103,7 @@ select.prototype.draw = function() {
     this.canvas.style.border = "solid 2px "+this.colors.border;
 
 }
-},{"../core/widget":3,"util":53}],36:[function(require,module,exports){
+},{"../core/widget":3,"util":54}],37:[function(require,module,exports){
 var math = require('../utils/math')
 var util = require('util');
 var widget = require('../core/widget');
@@ -6962,7 +7319,7 @@ slider.prototype.move = function() {
 	this.val.value = math.prune(this.rangify(normalval),3)
 	this.transmit(this.val);
 }
-},{"../core/widget":3,"../utils/math":6,"util":53}],37:[function(require,module,exports){
+},{"../core/widget":3,"../utils/math":6,"util":54}],38:[function(require,module,exports){
 var util = require('util');
 var widget = require('../core/widget');
 
@@ -7162,7 +7519,7 @@ string.prototype.pluck = function(which) {
 string.prototype.customDestroy = function() {
 	nx.removeAni(this.draw.bind(this));
 }
-},{"../core/widget":3,"util":53}],38:[function(require,module,exports){
+},{"../core/widget":3,"util":54}],39:[function(require,module,exports){
 var math = require('../utils/math')
 var util = require('util');
 var widget = require('../core/widget');
@@ -7254,7 +7611,7 @@ tabs.prototype.click = function() {
 	this.transmit(this.val)
 	this.draw();
 }
-},{"../core/widget":3,"../utils/math":6,"util":53}],39:[function(require,module,exports){
+},{"../core/widget":3,"../utils/math":6,"util":54}],40:[function(require,module,exports){
 var util = require('util');
 var widget = require('../core/widget');
 
@@ -7341,7 +7698,7 @@ text.prototype.draw = function() {
     this.canvas.style.backgroundColor = this.colors.fill;
     this.canvas.style.color = this.colors.black;
 }
-},{"../core/widget":3,"util":53}],40:[function(require,module,exports){
+},{"../core/widget":3,"util":54}],41:[function(require,module,exports){
 var math = require('../utils/math')
 var util = require('util');
 var widget = require('../core/widget');
@@ -7478,7 +7835,7 @@ tilt.prototype.customDestroy = function() {
 	window.removeEventListener("deviceorientation",this.boundChromeTilt,false);
 	window.removeEventListener("mozOrientation",this.boundMozTilt,false);
 }
-},{"../core/widget":3,"../utils/math":6,"util":53}],41:[function(require,module,exports){
+},{"../core/widget":3,"../utils/math":6,"util":54}],42:[function(require,module,exports){
 var drawing = require('../utils/drawing');
 var util = require('util');
 var widget = require('../core/widget');
@@ -7550,7 +7907,7 @@ toggle.prototype.click = function() {
 	this.draw();
 	this.transmit(this.val);
 }
-},{"../core/widget":3,"../utils/drawing":5,"util":53}],42:[function(require,module,exports){
+},{"../core/widget":3,"../utils/drawing":5,"util":54}],43:[function(require,module,exports){
 var math = require('../utils/math')
 var util = require('util');
 var widget = require('../core/widget');
@@ -7652,7 +8009,7 @@ trace.prototype.release = function() {
 	this.transmit(this.val);
 }
 
-},{"../core/widget":3,"../utils/math":6,"util":53}],43:[function(require,module,exports){
+},{"../core/widget":3,"../utils/math":6,"util":54}],44:[function(require,module,exports){
 var drawing = require('../utils/drawing');
 var util = require('util');
 var widget = require('../core/widget');
@@ -7900,7 +8257,7 @@ typewriter.prototype.customDestroy = function() {
 	window.removeEventListener("keydown", this.boundType);
 	window.removeEventListener("keyup", this.boundUntype);
 }
-},{"../core/widget":3,"../utils/drawing":5,"util":53}],44:[function(require,module,exports){
+},{"../core/widget":3,"../utils/drawing":5,"util":54}],45:[function(require,module,exports){
 var math = require('../utils/math')
 var util = require('util');
 var widget = require('../core/widget');
@@ -8047,7 +8404,7 @@ vinyl.prototype.spin = function() {
 vinyl.prototype.customDestroy = function() {
 	nx.removeAni(this.spin.bind(this));
 }
-},{"../core/widget":3,"../utils/math":6,"util":53}],45:[function(require,module,exports){
+},{"../core/widget":3,"../utils/math":6,"util":54}],46:[function(require,module,exports){
 var util = require('util');
 var widget = require('../core/widget');
 var math = require('../utils/math')
@@ -8412,7 +8769,7 @@ waveform.prototype.move = function() {
 	this.draw();
 
 }
-},{"../core/widget":3,"../utils/math":6,"util":53}],46:[function(require,module,exports){
+},{"../core/widget":3,"../utils/math":6,"util":54}],47:[function(require,module,exports){
 var util = require('util');
 var widget = require('../core/widget');
 var math = require('../utils/math')
@@ -8749,7 +9106,7 @@ wavegrain.prototype.tick = function() {
 	this.val.state = "on"
 	this.transmit(this.val);
 }
-},{"../core/widget":3,"../utils/math":6,"util":53}],47:[function(require,module,exports){
+},{"../core/widget":3,"../utils/math":6,"util":54}],48:[function(require,module,exports){
 var math = require('../utils/math')
 var util = require('util');
 var widget = require('../core/widget');
@@ -8992,7 +9349,7 @@ windows.prototype.restrict = function(item) {
 	}	
 	return item;
 }
-},{"../core/widget":3,"../utils/math":6,"util":53}],48:[function(require,module,exports){
+},{"../core/widget":3,"../utils/math":6,"util":54}],49:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -9295,7 +9652,7 @@ function isUndefined(arg) {
   return arg === void 0;
 }
 
-},{}],49:[function(require,module,exports){
+},{}],50:[function(require,module,exports){
 var hasOwn = Object.prototype.hasOwnProperty;
 var toStr = Object.prototype.toString;
 var undefined;
@@ -9386,7 +9743,7 @@ module.exports = function extend() {
 };
 
 
-},{}],50:[function(require,module,exports){
+},{}],51:[function(require,module,exports){
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -9411,7 +9768,7 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],51:[function(require,module,exports){
+},{}],52:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -9476,14 +9833,14 @@ process.chdir = function (dir) {
     throw new Error('process.chdir is not supported');
 };
 
-},{}],52:[function(require,module,exports){
+},{}],53:[function(require,module,exports){
 module.exports = function isBuffer(arg) {
   return arg && typeof arg === 'object'
     && typeof arg.copy === 'function'
     && typeof arg.fill === 'function'
     && typeof arg.readUInt8 === 'function';
 }
-},{}],53:[function(require,module,exports){
+},{}],54:[function(require,module,exports){
 (function (process,global){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -10073,7 +10430,7 @@ function hasOwnProperty(obj, prop) {
 }
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./support/isBuffer":52,"_process":51,"inherits":50}],54:[function(require,module,exports){
+},{"./support/isBuffer":53,"_process":52,"inherits":51}],55:[function(require,module,exports){
 /* Web Font Loader v1.6.24 - (c) Adobe Systems, Google. License: Apache 2.0 */
 (function(){function aa(a,b,d){return a.call.apply(a.bind,arguments)}function ba(a,b,d){if(!a)throw Error();if(2<arguments.length){var c=Array.prototype.slice.call(arguments,2);return function(){var d=Array.prototype.slice.call(arguments);Array.prototype.unshift.apply(d,c);return a.apply(b,d)}}return function(){return a.apply(b,arguments)}}function p(a,b,d){p=Function.prototype.bind&&-1!=Function.prototype.bind.toString().indexOf("native code")?aa:ba;return p.apply(null,arguments)}var q=Date.now||function(){return+new Date};function ca(a,b){this.a=a;this.m=b||a;this.c=this.m.document}var da=!!window.FontFace;function t(a,b,d,c){b=a.c.createElement(b);if(d)for(var e in d)d.hasOwnProperty(e)&&("style"==e?b.style.cssText=d[e]:b.setAttribute(e,d[e]));c&&b.appendChild(a.c.createTextNode(c));return b}function u(a,b,d){a=a.c.getElementsByTagName(b)[0];a||(a=document.documentElement);a.insertBefore(d,a.lastChild)}function v(a){a.parentNode&&a.parentNode.removeChild(a)}
 function w(a,b,d){b=b||[];d=d||[];for(var c=a.className.split(/\s+/),e=0;e<b.length;e+=1){for(var f=!1,g=0;g<c.length;g+=1)if(b[e]===c[g]){f=!0;break}f||c.push(b[e])}b=[];for(e=0;e<c.length;e+=1){f=!1;for(g=0;g<d.length;g+=1)if(c[e]===d[g]){f=!0;break}f||b.push(c[e])}a.className=b.join(" ").replace(/\s+/g," ").replace(/^\s+|\s+$/,"")}function y(a,b){for(var d=a.className.split(/\s+/),c=0,e=d.length;c<e;c++)if(d[c]==b)return!0;return!1}

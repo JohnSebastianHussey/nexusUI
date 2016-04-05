@@ -619,6 +619,8 @@ class motion
 ------------
 class mouse
 -----------
+class multicirclestep
+---------------------
 class multislider
 -----------------
 **Methods**
