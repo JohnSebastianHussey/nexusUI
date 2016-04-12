@@ -579,12 +579,12 @@ var widget = module.exports = function (target) {
   this.checkPercentage();
   this.canvas.className = this.canvas.className ? this.canvas.className += " nx" : "nx"
 
-  this.canvas.height = window.getComputedStyle(document.getElementById(target), null).getPropertyValue("height").replace("px","");
-  this.canvas.width = window.getComputedStyle(document.getElementById(target), null).getPropertyValue("width").replace("px","");
+  this.canvas.height = (this.canvas.height) ? this.canvas.height : window.getComputedStyle(document.getElementById(target), null).getPropertyValue("height").replace("px","");
+  this.canvas.width = (this.canvas.width) ? this.canvas.width : window.getComputedStyle(document.getElementById(target), null).getPropertyValue("width").replace("px","");
   /**  @property {integer} height The widget canvas's computed height in pixels */
-  this.height = parseInt(window.getComputedStyle(document.getElementById(target), null).getPropertyValue("height").replace("px",""));
+  this.height = (this.canvas.height) ? this.canvas.height : parseInt(window.getComputedStyle(document.getElementById(target), null).getPropertyValue("height").replace("px",""));
   /**  @property {integer} width The widget canvas's computed width in pixels */
-  this.width = parseInt(window.getComputedStyle(document.getElementById(target), null).getPropertyValue("width").replace("px",""));
+  this.width = (this.canvas.width) ? this.canvas.width : parseInt(window.getComputedStyle(document.getElementById(target), null).getPropertyValue("width").replace("px",""));
   if (!this.defaultSize) {
     /**  @property {object} defaultSize The widget's default size if not defined with HTML/CSS style. (Has properties 'width' and 'height', both in pixels) */
     this.defaultSize = { width: 100, height: 100 };
